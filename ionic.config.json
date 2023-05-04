@@ -1,0 +1,7 @@
+{
+  "name": "kamet-landing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
