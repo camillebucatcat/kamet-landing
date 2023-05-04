@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'terms-and-condition',
     loadChildren: () => import('./terms-and-condition/terms-and-condition.module').then( m => m.TermsAndConditionPageModule)
   },
+  {
+    path: 'notice-of-privacy',
+    loadChildren: () => import('./notice-of-privacy/notice-of-privacy.module').then( m => m.NoticeOfPrivacyPageModule)
+  },
 ];
 
 @NgModule({
