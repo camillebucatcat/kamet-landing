@@ -464,3 +464,15 @@ footer {
   background: #E3F3F6;
   --background: #E3F3F6;
 }
+
+.btn-back {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform:capitalize;
+  letter-spacing: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  img {
+    margin-right: .5rem;
+  }
+}
