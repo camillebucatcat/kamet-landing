@@ -1,20 +1,166 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="bg-secondary-100">
+  <section class="hero no-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-xl-8">
+          <img src="./assets/images/kamet-logo.png" height="36" class="logo">
+          <div data-aos="fade-down" data-aos-once="true">
+            <h1>Explora un mundo de posibilidades financieras con tu tarjeta de crédito Kamet.</h1>
+            <p class="sub-header">Nacimos para descomplicar el mundo financiero. </p>
+          </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+          <div class="form">
+            <div>
+              <div class="header">¡Obtén tu Kamet en 5 minutos!</div>
+              <div class="body">
+                <!-- <div class="preloader">
+                  <div class="loader"></div>
+                </div> -->
+                <form>
+                  <input type="text" class="form-control" placeholder="Nombre">
+                  <input type="text" class="form-control" placeholder="Correo electrónico">
+                  <input type="text" class="form-control" placeholder="Número de celular">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+                  <button class="btn">Obtener tarjeta</button>
+                  <div class="terms">
+                    Al continuar aceptas los <a class="fw-700" href="terms-and-conditions.html" target="_blank">términos
+                      y
+                      condiciones</a> y el <br><a class="fw-700" href="notice-of-privacy.html" target="_blank">aviso de
+                      privacidad</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- success -->
+            <div class="message" hidden>
+              <img src="./assets/images/icon-check.png">
+              <p>El código de invitación se ha enviado con éxito a tu correo.</p>
+            </div>
+
+            <!-- resend -->
+            <div class="message" hidden>
+              <img src="./assets/images/icon-check.png">
+              <p>Reenviamos el código de invitación a tu correo.</p>
+            </div>
+
+            <!-- 3rd attempt -->
+            <div class="message" hidden>
+              <img src="./assets/images/icon-check.png">
+              <p>Te contactaremos para darte tu código de acceso</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="no-padding about">
+    <div class="container">
+      <div class="lg-text">Sé parte del primer grupo en ascenso <br>de Kamet y disfruta de sus beneficios.</div>
+    </div>
+    <!-- 1 -->
+    <div class="bg-yellow">
+      Sin costos ni comisiones
+    </div>
+    <div class="container text-primary">
+      <div class="row">
+        <div class="col-12 col-lg-5 icon-container">
+          <img src="./assets/images/icon-1.png" width="250">
+        </div>
+        <div class="col-12 col-lg-7 text-container">
+          <ul class="list">
+            <li>$0 de <strong>anualidad</strong></li>
+            <li>$0 por <strong>no usar</strong> tu tarjeta</li>
+            <li>$0 por una <strong>experiencia</strong> financiera <strong>eficaz</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 2 -->
+    <div class="bg-yellow">
+      Difiere tus compras
+    </div>
+    <div class="container text-primary">
+      <div class="row">
+        <div class="col-12 col-lg-5 icon-container order-lg-last">
+          <img src="./assets/images/icon-2.png" width="250">
+        </div>
+        <div class="col-12 col-lg-7 text-container">
+          <p>Hasta <strong>18 meses</strong> para que pagues como quieras</p>
+        </div>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="bg-yellow">
+      Personaliza tu fecha de pago
+    </div>
+    <div class="container text-primary">
+      <div class="row">
+        <div class="col-12 col-lg-5 icon-container">
+          <img src="./assets/images/icon-3.png" width="250">
+        </div>
+        <div class="col-12 col-lg-7 text-container">
+          <p><strong>Elige el día</strong> que mejor se acomode a tu bolsillo  </p>
+        </div>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="bg-yellow">
+      Recibe atención personalizada 24/7
+    </div>
+    <div class="container text-primary">
+      <div class="row">
+        <div class="col-12 col-lg-5 icon-container order-lg-last">
+          <img src="./assets/images/icon-4.png" width="250">
+        </div>
+        <div class="col-12 col-lg-7 text-container">
+          <p>Adiós robots, <strong>tención humana 24/7</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>Qué tus finanzas no te pongan morado, <strong>nos vemos en la cima ;)</strong></p>
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-6">
+              <div class="link">
+                <a href="https://www.instagram.com/kamet.mx" target="_blank">
+                  <img src="./assets/images/ph_instagram-logo-fill.png">
+                </a>
+                <a href="https://www.facebook.com/Kametapp/" target="_blank">
+                  <img src="./assets/images/uil_facebook-f.png">
+                </a>
+                <a href="https://www.linkedin.com/company/kametmx/" target="_blank">
+                  <img src="./assets/images/ci_linkedin.png">
+                </a>
+              </div>
+            </div>
+            <div class="col-6" style="text-align:right;">
+              <img src="./assets/images/kamet-logo-white.png" height="36">
+            </div>
+          </div>
+
+          <div class="download">
+            <p>Descarga la App!</p>
+            <a href="http://play.google.com/store/apps/details?id=com.kmtapp.customer" target="_blank">
+              <img src="./assets/images/google-play.png" alt="google-play">
+            </a>
+            <a href="https://apps.apple.com/us/app/kamet-tarjeta-de-cr%C3%A9dito/id1666436513" target="_blank">
+              <img src="./assets/images/app-store.png" alt="apple-store">
+            </a>
+          </div>
+
+          <div class="copyright">
+            <div>Copyright © 2023 Kamet. Todos los derechos reservados.</div>
+            <div>Bosque de Radiatas 22, PB2 Of. 3 Col. Bosques de las Lomas, Alc. Cuajimalpa de Morelos C.P. 05120,
+              CDMX.
+            </div>
+            <div><a href="mailto:hola@kamet.mx">hola@kamet.mx</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </ion-content>
