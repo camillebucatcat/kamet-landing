@@ -10,18 +10,18 @@
           </div>
 
           <div class="form">
-            <div>
+            <div *ngIf="getInfo==1">
               <div class="header">¡Obtén tu Kamet en 5 minutos!</div>
               <div class="body">
-                <!-- <div class="preloader">
+                <div class="preloader" *ngIf="loaded">
                   <div class="loader"></div>
-                </div> -->
-                <form>
-                  <input type="text" class="form-control" placeholder="Nombre">
-                  <input type="text" class="form-control" placeholder="Correo electrónico">
-                  <input type="text" class="form-control" placeholder="Número de celular">
+                </div>
+                <form [formGroup]="profileForm">
+                  <input type="text" class="form-control" formControlName="Nombre" placeholder="Nombre">
+                  <input type="text" class="form-control"  formControlName='Correo' placeholder="Correo electrónico">
+                  <input type="text" class="form-control" formControlName="Numero" placeholder="Número de celular">
 
-                  <button class="btn">Obtener tarjeta</button>
+                  <button class="btn" (click)="confirm()">Obtener tarjeta</button>
                   <div class="terms">
                     Al continuar aceptas los <a class="fw-700" routerLink="/terms-and-condition"
                       target="_blank">términos
@@ -34,19 +34,21 @@
               </div>
             </div>
             <!-- success -->
-            <div class="message" hidden>
+            <div class="message" *ngIf="getInfo==2">
               <img src="./assets/images/icon-check.png">
               <p>El código de invitación se ha enviado con éxito a tu correo.</p>
+              <button class="btn" (click)="resend()">Obtener tarjeta</button>
             </div>
 
             <!-- resend -->
-            <div class="message" hidden>
+            <div class="message" *ngIf="getInfo==3">
               <img src="./assets/images/icon-check.png">
               <p>Reenviamos el código de invitación a tu correo.</p>
+              <button class="btn" (click)="confirm()">Obtener tarjeta</button>
             </div>
 
             <!-- 3rd attempt -->
-            <div class="message" hidden>
+            <div class="message"*ngIf="getInfo==4">
               <img src="./assets/images/icon-check.png">
               <p>Te contactaremos para darte tu código de acceso</p>
             </div>
