@@ -54,8 +54,12 @@
 
 html {
   font-family: "Gilroy", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
+
+  @media screen and (min-width: 992px) {
+    font-size: 16px;
+  }
 }
 
 .logo {
@@ -94,11 +98,15 @@ strong, .fw-700 {
 }
 
 .lg-text {
-  font-size: 3rem;
+  font-size: 2.25rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
   color: var(--ion-color-primary);
   font-weight: 700;
+
+  @media screen and (min-width: 992px) {
+    font-size: 2.75rem;
+  }
 }
 
 .text-primary {
@@ -107,7 +115,7 @@ strong, .fw-700 {
 
 .container {
   @media screen and (min-width: 1400px){
-    max-width: 1200px;
+    max-width: 1000px;
   }
 }
 
@@ -137,7 +145,7 @@ strong, .fw-700 {
 
   h1 {
     font-weight: bold!important;
-    font-size: 2.35rem;
+    font-size: 2.75rem;
     margin-bottom: 1rem;
     color: var(--ion-color-light);
     line-height: 1;
@@ -149,10 +157,9 @@ strong, .fw-700 {
   }
 
   .sub-header {
-    font-size: 1rem;
+    font-size: 1.5rem;
 
     @media screen and (min-width: 992px) {
-      font-size: 1.5rem;
       width: 80%;
     }
   }
@@ -243,7 +250,11 @@ strong, .fw-700 {
 }
 
 .about {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+
+  @media screen and (min-width: 992px) {
+    font-size: 1.75rem;
+  }
 
   .bg-yellow {
     background: var(--ion-color-tertiary);
