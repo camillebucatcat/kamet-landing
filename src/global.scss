@@ -255,10 +255,13 @@ strong, .fw-700 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 2rem;
 
     @media screen and (min-width: 992px) {
       display: block;
+      height: auto;
+      margin-bottom: 1rem;
     }
   }
 }
