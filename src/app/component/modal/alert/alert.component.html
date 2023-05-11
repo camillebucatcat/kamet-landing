@@ -1,0 +1,22 @@
+<div class="wrapper ion-text-center">
+  <ion-button *ngIf="(!buttons&&type!='error')||type=='cardtype'" fill="clear" class="btn-close-dialog" (click)="close()">
+    <img src="./assets/icons/icon-close.svg" />
+  </ion-button>
+  <img src="../../../../assets/icon/icon-invalid.svg" class="mb-1 mt-1 m-auto" *ngIf="type=='error'">
+  <div class="fs-20 fw-600 text-secondary mt-1 mb-2" [innerHTML]="message"></div>
+  <!-- [class.mb-2]="!submessage" -->
+  <div class="fs-18 text-medium mb-2" *ngIf="submessage" [innerHTML]="submessage"></div>
+  <ion-row *ngIf="type!='chat'">
+    <ion-col class="no-padding" size="6" offset="3" *ngIf="type=='error'&&!buttons">
+      <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="close()" [color]="'primary'">Ok</ion-button>
+    </ion-col>
+    <ion-col class="no-padding" size="6" [offset]="buttons.length>1?'0':'3'" *ngFor="let b of buttons">
+      <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="task(b)" [color]="b.color||'primary'">{{ b.text }}</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="type=='chat'">
+    <ion-col class="no-padding" size="8" offset="2" *ngFor="let b of buttons">
+      <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="task(b)" [color]="b.color||'primary'">{{ b.text }}</ion-button>
+    </ion-col>
+  </ion-row>
+</div>

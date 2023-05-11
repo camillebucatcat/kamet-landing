@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { KmtService } from '../services/kmt.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { RootService } from '../services/rootservice.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ export class HomePage {
   });
   
 
-  constructor(private kmtService:KmtService, private route : ActivatedRoute) {
+  constructor(private rootService : RootService,private kmtService:KmtService, private route : ActivatedRoute) {
 
     this.route.queryParams.subscribe((data:any)=>{
       this.referrer = data.ReferrerEmail
@@ -38,41 +39,24 @@ export class HomePage {
     var email = this.profileForm.controls.Correo.value
     var number = this.profileForm.controls.Numero.value
     this.kmtService.CreateInvitationCode({
-      FullName : name,
-      Email : email,
-      MobileNumber : number,
-      ReferrerEmail: this.referrer?this.referrer:""
+        FullName : name,
+        Email : email,
+        MobileNumber : number,
     }).then((data:any)=>{
-      this.loaded = false
       console.log(data)
-      this.getInfo = 2
+      this.loaded = false
+      if(data.Data.ResponseCode == "REFERRAL_1x")this.getInfo = 2 
+      if(data.Data.ResponseCode == "REFERRAL_2x")this.getInfo = 3
     }).catch((error:any)=>{
       this.loaded = false
-      if(error.Message == "This email has received more than 3 referral code request."){
+      
+      if(error.Data.ResponseCode == "REFERRAL_3x"){
         this.getInfo=4
       }
+      else{
+        this.rootService.alert('error',[error.Data.Message],null);
+      }
       
-    })
-  }
-
-  resend(){
-    this.loaded = true
-    var name = this.profileForm.controls.Nombre.value
-    var email = this.profileForm.controls.Correo.value
-    var number = this.profileForm.controls.Numero.value
-    this.kmtService.CreateInvitationCode({
-      FullName : name,
-      Email : email,
-      MobileNumber : number,
-      ReferrerEmail: this.referrer?this.referrer:""
-    }).then((data:any)=>{
-      this.loaded = false
-      console.log(data)
-      this.getInfo = 3
-
-    }).catch(()=>{
-      this.loaded = false
-      this.getInfo=4
     })
   }
 

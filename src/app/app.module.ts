@@ -9,10 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HTTP } from '@awesome-cordova-plugins/http/ngx';
+import { SharedModule } from './share.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [HttpClientModule,ReactiveFormsModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [SharedModule,HttpClientModule,ReactiveFormsModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [HTTP, HttpClient,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
 })
