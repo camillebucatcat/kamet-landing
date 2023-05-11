@@ -256,6 +256,10 @@ strong, .fw-700 {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
   }
 }
 
