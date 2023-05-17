@@ -20,9 +20,25 @@
                     <div class="loader"></div>
                   </div>
                   <form [formGroup]="profileForm">
-                    <input type="text" class="form-control" formControlName="Nombre" placeholder="Nombre">
-                    <input type="text" class="form-control"  formControlName='Correo' placeholder="Correo electrónico">
-                    <input type="text" class="form-control" formControlName="Numero" placeholder="Número de celular">
+                    <ion-row>
+                      <ion-col size="6">
+                        <input type="text" class="form-control" placeholder="Nombre de pila">
+                      </ion-col>
+                      <ion-col size="6">
+                        <input type="text" class="form-control" placeholder="Apellido">
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size="12">
+                        <input type="text" class="form-control" formControlName='Correo' placeholder="Correo electrónico">
+                      </ion-col>
+                      <ion-col size="12">
+                        <input type="text" class="form-control" formControlName="Numero" placeholder="Número de celular">
+                      </ion-col>
+                    </ion-row>
+                    <!-- <input type="text" class="form-control" formControlName="Nombre" placeholder="Nombre"> -->
+                    <!-- <input type="text" class="form-control"  formControlName='Correo' placeholder="Correo electrónico">
+                    <input type="text" class="form-control" formControlName="Numero" placeholder="Número de celular"> -->
 
                     <button class="btn" (click)="confirm()">Obtener tarjeta</button>
                     <div class="terms">
