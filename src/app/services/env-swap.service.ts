@@ -6,7 +6,7 @@ import { Storage } from '@capacitor/storage';
   providedIn: 'root'
 })
 export class EnvSwapService {
-  private _uri: BehaviorSubject<any> = new BehaviorSubject('test');
+  private _uri: BehaviorSubject<any> = new BehaviorSubject('prod');
   public readonly uri: Observable<any> = this._uri.asObservable();
   constructor() { }
   set(env: string): void {

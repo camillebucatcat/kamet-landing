@@ -16,7 +16,7 @@ import { CryptoServiceService } from './crypto.service.service';
 })
 export class HttpServicesService {
   public pentestenabled: boolean = true;
-  private envtype: any = "default";
+  private envtype: any = "prod";
   constructor( public router: Router, private http: HttpClient, private nhttp: HTTP,private envswap: EnvSwapService, private crypto: CryptoServiceService) {
     this.envswap.uri.subscribe((env: string) => {
       Storage.get({key:'env'}).then((data:any)=>{
