@@ -17,6 +17,7 @@ export class HomePage {
 
   profileForm = new FormGroup({
     Nombre: new FormControl(''),
+    Apellido: new FormControl(''),
     Correo: new FormControl(''),
     Numero: new FormControl(''),
   });
@@ -35,11 +36,13 @@ export class HomePage {
 
   confirm(){
     this.loaded = true
-    var name = this.profileForm.controls.Nombre.value
+    var fname = this.profileForm.controls.Nombre.value
+    var lname = this.profileForm.controls.Apellido.value
     var email = this.profileForm.controls.Correo.value
     var number = this.profileForm.controls.Numero.value
     this.kmtService.CreateInvitationCode({
-        FullName : name,
+      FirstName: fname,
+        LastName : lname,
         Email : email,
         MobileNumber : number,
     }).then((data:any)=>{
