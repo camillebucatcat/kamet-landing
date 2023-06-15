@@ -191,11 +191,17 @@
       </div>
     </div>
   </footer>
-  <ion-modal [isOpen]="isModalOpen" class="flag-modal">
+  <ion-modal #modal [isOpen]="isModalOpen" class="flag-modal" [backdropDismiss]="false">
     <ng-template>
       <div class="list-container ion-padding">
-
-        <ion-searchbar showCancelButton="never" searchIcon="search" mode="ios" ></ion-searchbar>
+        <ion-row>
+          <ion-col size="9">
+            <ion-searchbar showCancelButton="never" mode="ios" ></ion-searchbar>
+          </ion-col>
+          <ion-col size="3">
+            <ion-button fill="clear" color="medium" (click)="modal.dismiss()">Close</ion-button>
+          </ion-col>
+        </ion-row>
         <div class="country-list">
 
           <ion-list>

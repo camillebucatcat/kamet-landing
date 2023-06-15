@@ -180,7 +180,24 @@ ion-toast.custom-toast::part(message) {
 }
 
 .flag-modal {
-  --width: 400px;
+  --width: 450px;
+
+  ion-searchbar {
+    padding: 0;
+    height: 50px;
+
+    .searchbar-input-container {
+      height: 100%;
+    }
+  }
+
+  ion-row {
+    align-items: center;
+
+    ion-button {
+      font-weight: 600;
+    }
+  }
 }
 .list-container {
   overflow-y: auto;
