@@ -14,6 +14,7 @@ export class HomePage {
   referrer: string = '';
   getInfo : number = 1
   sendcode : boolean =false
+  isModalOpen = false;
 
   profileForm = new FormGroup({
     Nombre: new FormControl(''),
@@ -63,4 +64,8 @@ export class HomePage {
     })
   }
 
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
 }

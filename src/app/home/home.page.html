@@ -32,7 +32,13 @@
                       <ion-col size="12">
                         <input type="text" class="form-control" formControlName='Correo' placeholder="Correo electrónico">
                       </ion-col>
-                      <ion-col size="12">
+                       <ion-col size="3">
+                          <div class="form-group select-flag" (click)="setOpen(true)">
+                            <img src="./assets/country-flags/mx.png">
+                            <span>+ 52</span>
+                          </div>
+                       </ion-col>
+                      <ion-col size="9">
                         <input type="text" class="form-control" formControlName="Numero" placeholder="Número de celular">
                       </ion-col>
                     </ion-row>
@@ -185,4 +191,90 @@
       </div>
     </div>
   </footer>
+  <ion-modal [isOpen]="isModalOpen" class="flag-modal">
+    <ng-template>
+      <div class="list-container ion-padding">
+
+        <ion-searchbar showCancelButton="never" searchIcon="search" mode="ios" ></ion-searchbar>
+        <div class="country-list">
+
+          <ion-list>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/mx.png">
+              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
+            </ion-item>
+            <ion-item button>
+              <img src="./assets/country-flags/ph.png">
+              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            </ion-item>
+          </ion-list>
+        </div>
+      </div>
+
+    </ng-template>
+  </ion-modal>
 </ion-content>

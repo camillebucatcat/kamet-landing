@@ -178,3 +178,27 @@ ion-toast.custom-toast::part(message) {
   font-size:12px;
   padding: 45px 12px 3px 12px;
 }
+
+.flag-modal {
+  --width: 400px;
+}
+.list-container {
+  overflow-y: auto;
+
+  .country-list {
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 1rem;
+    }
+    span {
+      font-weight: 600;
+      display: inline-block;
+
+      &.text-medium {
+        color: var(--ion-color-medium);
+        margin-left: .5rem;
+      }
+    }
+  }
+}

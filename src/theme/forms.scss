@@ -1,0 +1,37 @@
+.form-group {
+  position: relative;
+
+  .form-control {
+  }
+
+  &.select-flag {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    background-image: url("../assets/icon/caret-down.svg");
+    background-repeat: no-repeat;
+    background-size: 14px;
+    background-position: 94% center;
+    padding-right: 30px;
+    font-size: 1rem;
+    line-height: 1rem;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
+    span {
+      font-weight: 600;
+      color: var(--ion-color-dark);
+    }
+  }
+}
