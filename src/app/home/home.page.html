@@ -34,8 +34,8 @@
                       </ion-col>
                        <ion-col size="3">
                           <div class="form-group select-flag" (click)="setOpen(true)">
-                            <img src="./assets/country-flags/mx.png">
-                            <span>+ 52</span>
+                            <img [src] = flagimage >
+                            <span> +{{selectedcountry.mobile_prefix}}</span>
                           </div>
                        </ion-col>
                       <ion-col size="9">
@@ -196,86 +196,26 @@
       <div class="list-container ion-padding">
         <ion-row>
           <ion-col size="9">
-            <ion-searchbar showCancelButton="never" mode="ios" ></ion-searchbar>
+            <ion-searchbar showCancelButton="never" mode="ios"  (keyup)="searchbar($event)" ></ion-searchbar>
           </ion-col>
           <ion-col size="3">
-            <ion-button fill="clear" color="medium" (click)="modal.dismiss()">Close</ion-button>
+            <ion-button fill="clear" color="medium" (click)="modal.dismiss();setOpen(false)">Close</ion-button>
           </ion-col>
         </ion-row>
         <div class="country-list">
 
           <ion-list>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/mx.png">
-              <span>Mexico</span> <span class="text-medium"> (+ 52)</span>
-            </ion-item>
-            <ion-item button>
-              <img src="./assets/country-flags/ph.png">
-              <span>Philippines</span> <span class="text-medium"> (+ 63)</span>
+            <!-- <ion-item class="selected" >
+              <div slot="start" class="cropper"><img [src]="geticon(selectedcountry)" class="img-icon"></div>
+              <h1 [class.selected]="true">{{ selectedcountry.description }}</h1>
+              <ion-icon slot="end" color="dark" name="checkmark-outline"></ion-icon>
+            </ion-item> -->
+
+          <ion-item-divider></ion-item-divider>
+
+            <ion-item button *ngFor="let c of countries" (click)="selectcountry(c)">
+              <img [src]="geticon(c)">
+              <span >{{ c.description }}</span> <span class="text-medium"> +{{ c.mobile_prefix }}</span>
             </ion-item>
           </ion-list>
         </div>
