@@ -3,6 +3,8 @@ import { KmtService } from '../services/kmt.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { RootService } from '../services/rootservice.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateManagerService } from '../services/translate-manager.service';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +26,7 @@ export class HomePage {
   });
   
 
-  constructor(private rootService : RootService,private kmtService:KmtService, private route : ActivatedRoute) {
+  constructor(private trans: TranslateManagerService,private translate : TranslateService,private rootService : RootService,private kmtService:KmtService, private route : ActivatedRoute) {
 
     this.route.queryParams.subscribe((data:any)=>{
       this.referrer = data.ReferrerEmail
