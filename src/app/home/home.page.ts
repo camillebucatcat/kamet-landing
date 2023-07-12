@@ -106,7 +106,7 @@ export class HomePage {
         this.getInfo=4
       }
       else{
-        this.rootService.alert('error',[error.Data.Message],null);
+        this.rootService.alert('error',[error.Data != null?this.translate.instant(error.Data.ResponseCode): error.Data.Message],null);
       }
       
     })

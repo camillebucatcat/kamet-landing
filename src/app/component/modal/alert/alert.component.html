@@ -6,10 +6,13 @@
   <div class="fs-20 fw-600 text-secondary mt-1 mb-2" [innerHTML]="message"></div>
   <!-- [class.mb-2]="!submessage" -->
   <div class="fs-18 text-medium mb-2" *ngIf="submessage" [innerHTML]="submessage"></div>
+  <br>
   <ion-row *ngIf="type!='chat'">
-    <ion-col class="no-padding" size="6" offset="3" *ngIf="type=='error'&&!buttons">
-      <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="close()" [color]="'primary'">Ok</ion-button>
+    <ion-col size="2"></ion-col>
+    <ion-col class="no-padding" size="8"  *ngIf="type=='error'&&!buttons">
+      <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="close()" [color]="'primary'">{{"TRY-ANOTHER" | translate}}</ion-button>
     </ion-col>
+    <ion-col size="2"></ion-col>
     <ion-col class="no-padding" size="6" [offset]="buttons.length>1?'0':'3'" *ngFor="let b of buttons">
       <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="task(b)" [color]="b.color||'primary'">{{ b.text }}</ion-button>
     </ion-col>
