@@ -97,6 +97,7 @@ export class HomePage {
       this.loaded = false
       if(data.Data.ResponseCode == "REFERRAL_1x")this.getInfo = 2 
       if(data.Data.ResponseCode == "REFERRAL_2x")this.getInfo = 3
+      if(data.Data.ResponseCode == "REFERRAL_3x")this.getInfo = 4
     }).catch((error:any)=>{
       this.loaded = false
       
