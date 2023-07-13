@@ -1,16 +1,30 @@
 <div class="wrapper ion-text-center">
-  <ion-button *ngIf="(!buttons&&type!='error')||type=='cardtype'" fill="clear" class="btn-close-dialog" (click)="close()">
-    <img src="./assets/icons/icon-close.svg" />
+  <ion-button *ngIf="(!buttons&&type!='error'&&type!='error_email1')||type=='cardtype'" fill="clear" class="btn-close-dialog" (click)="close()">
+    <img src="./assets/icon/icon-close.svg" />
   </ion-button>
-  <img src="../../../../assets/icon/icon-invalid.svg" class="mb-1 mt-1 m-auto" *ngIf="type=='error'">
-  <div class="fs-20 fw-600 text-secondary mt-1 mb-2" [innerHTML]="message"></div>
+  
+  <img src="./assets/icon/icon-invalid.svg" class="mb-1 mt-1 m-auto" *ngIf="type=='error'">
+  
+  <!-- EMAIL ERROR -->
+  <img src="./assets/icon/Faill.svg" width="150" height="150" *ngIf="type=='error_email1'">
+
+
+
+  <div class="fs-20 fw-600 text-secondary mt-1 mb-2" [innerHTML]="message" *ngIf="type=='error'"></div>
+  <!-- EMAIL ERROR -->
+  <div [innerHTML]="'Correo ya registrado'" style="text-align: left; font-size: 30px;color: #05A1BA; font-weight: 600;" *ngIf="type=='error_email1'"></div>
+
   <!-- [class.mb-2]="!submessage" -->
   <div class="fs-18 text-medium mb-2" *ngIf="submessage" [innerHTML]="submessage"></div>
+    <!-- EMAIL ERROR -->
+  <div class="fs-30 text-medium ml-3 mt-2 mb-2" *ngIf="type=='error_email1'" style="font-size: 18px ;text-align: left ;color: #6E6E73" [innerHTML]="'Intenta con otro'"></div>
+
+
   <br>
   <ion-row *ngIf="type!='chat'">
     <ion-col size="2"></ion-col>
-    <ion-col class="no-padding" size="8"  *ngIf="type=='error'&&!buttons">
-      <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="close()" [color]="'primary'">{{"TRY-ANOTHER" | translate}}</ion-button>
+    <ion-col class="no-padding mt-2" size="8"  *ngIf="type=='error'&&!buttons||type=='error_email1'">
+      <ion-button class="ion-text-wrap btn-shadow" expand="block" shape="round" (click)="close()" [color]="'secondary'">{{"TRY-ANOTHER" | translate}}</ion-button>
     </ion-col>
     <ion-col size="2"></ion-col>
     <ion-col class="no-padding" size="6" [offset]="buttons.length>1?'0':'3'" *ngFor="let b of buttons">

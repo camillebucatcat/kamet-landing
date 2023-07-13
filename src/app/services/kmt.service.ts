@@ -19,10 +19,10 @@ export class KmtService {
         method: "post",
         serial: 'json'
       }).subscribe((res) => {
-        console.log(res)
+      //   console.log(res)
         resolve(res)
       }, (error) => {
-        console.log(error);
+      //   console.log(error);
         let errorresult = this.http.processError(error);
         reject(errorresult);
       });

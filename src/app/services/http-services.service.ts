@@ -21,7 +21,6 @@ export class HttpServicesService {
     this.envswap.uri.subscribe((env: string) => {
       Storage.get({key:'env'}).then((data:any)=>{
         let ent = env || data.value; // ((this.platform.is("hybrid")) ? (sessionStorage.getItem("uri") || env) : "default");
-        console.log(ent);
         // this.pentestenabled = ent=='prodpen' || ent=='devpen';
         this.envtype = (ent=='prodpen' ? 'prod' : (ent=='devpen' ? 'test' : ent));
       });
@@ -48,7 +47,6 @@ export class HttpServicesService {
     headers["ProgramKey"] = env[this.envtype].ProgramKey;
     if(sessionStorage.getItem("SessionId")) headers["Authorization"] = "Bearer " + sessionStorage.getItem("SessionId");
     let finurl = `${env[this.envtype][k.base_url?k.base_url:"base_url"]}/${k.url}`;
-    console.log(k)
     const options : any = {
       method: k.method.toUpperCase(),
       headers: headers
@@ -195,9 +193,7 @@ export class HttpServicesService {
         serial: 'json'
       }).subscribe((res) => {
         resolve(res.data[0].iv)
-        console.log("dsada")
       }, (error) => {
-        console.log(error);
         let errorresult = this.processError(error);
         reject(errorresult);
       });
@@ -211,7 +207,6 @@ export class HttpServicesService {
         ...data
       }
       let encrypted_data = this.crypto.encryptJson(temp_data, env[this.envtype].ApiKey, iv);
-      console.log(encrypted_data)
       resolve(encrypted_data);
       // this.defaultrequest({
       //   base_url: "pentest_url",
@@ -277,23 +272,23 @@ export class HttpServicesService {
               original: data,
               encrypted: res1
             }
-            console.log("api response" ,debug);
+            // console.log("api response" ,debug);
             if(debug.response.original.isSuccess===true) resolve(debug.response.original)
             else reject({
              error: debug.response.original
             });
           }, (error1) => {
-            console.log(error1);
+            // console.log(error1);
             let errorresult = this.processError(error1);
             reject(errorresult);
           });
         }).catch((error2)=>{
-          console.log(error2);
+          // console.log(error2);
           let errorresult = this.processError(error2);
             reject(errorresult);
         });
       }).catch((error)=>{
-        console.log(error);
+        // console.log(error);
         let errorresult = this.processError(error);
             reject(errorresult);
       });

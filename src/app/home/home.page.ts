@@ -64,7 +64,7 @@ export class HomePage {
       });
       this.countries = searched;
     }else this.countries = this.kmtService.countries;
-    console.log(this.countries)
+
   }
 
   searchbar(event: any){
@@ -76,7 +76,6 @@ export class HomePage {
     this.selectedcountry = selected
     this.flagimage = `assets/country-flags/${this.selectedcountry.code.toLowerCase()}.png`
     this.setOpen(false)
-    console.log(this.selectedcountry)
   }
   geticon(data: any) {
     return `assets/country-flags/${data.code.toLowerCase()}.png`;
@@ -95,7 +94,6 @@ export class HomePage {
         Email : email,
         MobileNumber : number,
     }).then((data:any)=>{
-      console.log(data)
       this.loaded = false
       if(data.Data.ResponseCode == "REFERRAL_1x")this.getInfo = 2 
       if(data.Data.ResponseCode == "REFERRAL_2x")this.getInfo = 3
@@ -105,8 +103,16 @@ export class HomePage {
       if(error.Data.ResponseCode == "REFERRAL_3x"){
         this.getInfo=4
       }
-      else{
-        this.rootService.alert('error',[error.Data.TranslateMessage],null);
+      else
+      {
+        if(error.Data.ResponseCode == "EMAIL_ERR1")
+        {
+          this.rootService.alert('error_email1',[error.Data.TranslateMessage],null)
+        }else
+        {
+          this.rootService.alert('error',[error.Data.TranslateMessage],null);
+        }
+        
       }
       
     })

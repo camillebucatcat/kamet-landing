@@ -16,7 +16,6 @@ export class CryptoServiceService {
       const key = Buffer.from(_key, 'base64');
       const iv = Buffer.from(_iv, 'base64');
 
-      console.log("heh")
       const cipher = crypto.createCipheriv(this.algorithm, key, iv);
       return Buffer.concat([cipher.update(buffer), cipher.final()]);
   }
@@ -31,7 +30,6 @@ export class CryptoServiceService {
   }
 
   encrypt(buffer : any, key : any, iv : any) {
-    console.log("h")
       let encryptedData = this._encrypt(buffer, key, iv);
       
       return encryptedData.toString("base64");
@@ -44,7 +42,6 @@ export class CryptoServiceService {
 
 
   encryptJson(data : any, key : any, iv : any) {
-    console.log('here1')
       return this.encrypt(JSON.stringify(data), key, iv);
   }
 
